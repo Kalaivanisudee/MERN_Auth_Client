@@ -11,7 +11,7 @@ const Profile = () => {
   useEffect(() => {
     const fetchProfile = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/auth/profile', {
+        const response = await axios.get('https://mern-auth-server-4.onrender.com/api/auth/profile', {
           headers: { Authorization: `Bearer ${token}` }
         });
         setProfile(response.data);
@@ -30,7 +30,7 @@ const Profile = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.put('http://localhost:5000/api/auth/profile', formData, {
+      await axios.put('https://mern-auth-server-4.onrender.com/api/auth/profile', formData, {
         headers: { Authorization: `Bearer ${token}` }
       });
       setProfile(formData);
